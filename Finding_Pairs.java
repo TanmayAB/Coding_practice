@@ -8,27 +8,6 @@ import java.util.Arrays;
 public class Solution {
     static int pairs(int[] a,int k) {
         int res,count = 0;
-/*
-        for(int i = a.length -1; i > 0 ;i--)
-        {
-            if(a[i] < k)
-            {
-                break;
-            }
-            else
-            {
-                for(int j = i-1; j >= 0; j--)
-                {
-                    if(a[i] - a[j] == k)
-                    {
-                        count++;
-                        break;
-                    }
-                }
-            }
-        }
-        return count;
-        */
         for(int i = 0; i < a.length -1; i++)
         {
          //   System.out.println("a[i] is : " + a[i] + "Searching for :" + a[i] + k);
