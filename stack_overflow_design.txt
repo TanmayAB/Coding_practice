@@ -1,0 +1,71 @@
+Modules:
+
+1) Authentication/User Account
+
+2) Post Question/ Answer / Comment
+
+3) Querying for Question
+4) Upvote/Downvote
+
+80% - 20%
+Read-Write
+
+~100M 
+10000 - Questions being posted
+50000 - Questions being queried
+
+
+1MB * 10000 * 365 * 5 = 18,250,000 * 1mb = 18TB * 2.5 = 45TB
+
+2MB 
+
+Questions:
+id: 4B 
+Subject: 8B
+Description: 1MB
+Catagory: 2B
+Upvotes:2B
+Downvotes:2B
+
+1MB 14B
+
+Answers:
+id: 4B
+questions_id: 4B
+description: 1MB
+Upvotes:2B
+Downvotes:2B
+
+1MB
+
+Comment:
+id:4B
+parent_id: 4B
+text:8B
+
+16B
+
+
+POST Question : (api_key, subject, description, user_longitude, user_latitude, category)
+
+GET Question: (query_string, user_longitude, user_latitude, category)
+ 
+POST UP_VOTE/DOWN_VOTE : (api_key, parent_id, user_longitude, user_latitude)
+
+
+
+
+
+consistent hashing
+
+
+N - No. of Servers
+
+has(key)-> value 1-N
+
+Separate servers for read and write
+
+LRU Caching for faster qureies and reduceing load on the DB
+
+API Rate Limiter - throttling
+
